@@ -84,7 +84,8 @@ var DailyRotateFile = function (options) {
             date_format: options.datePattern ? options.datePattern : 'YYYY-MM-DD',
             verbose: false,
             size: getMaxSize(options.maxSize),
-            max_logs: options.maxFiles
+            max_logs: options.maxFiles,
+            utc: options.utc
         });
 
         this.logStream.on('rotate', function (oldFile, newFile) {
